@@ -29,15 +29,19 @@ module.exports = function (grunt) {
                     'webroot/js/application.js': [
                         assets + 'jquery/jquery.min.js',
 
+                        // blockUI missing
+
                         // underscore
-                        // blockUI
+                        'webroot/assets/components_premium/con-material-adui/src/src/js/materialize/scrollspy.js',
 
                         assets + 'jqueryRAF/jquery.requestAnimationFrame.min.js',
                         assets + 'nanoScroller/jquery.nanoscroller.min.js',
                         assets + 'materialize/js/materialize.min.js',
                         assets + 'parsley/parsley.min.js',
-                        //
-                        assets + '_con/js/_con.js',
+                        assets + 'sortable/parsley.min.js',
+                        assets + '_con/Sortable.min.js',
+                        assets + 'dataTables/js/jquery.dataTables.min.js',
+                        assets + 'dataTables/extensions/TableTools/js/dataTables.tableTools.min.js',
                         'webroot/assets/javascripts/base.js',
 
                         'webroot/assets/javascripts/_CAKE.js'
