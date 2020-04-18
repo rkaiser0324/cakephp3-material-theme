@@ -13,3 +13,5 @@
 //= require "base.js"
 
 //= require "_CAKE.js"
+
+alert('hi');

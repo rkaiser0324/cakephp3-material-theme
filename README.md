@@ -31,8 +31,17 @@ H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php plugin assets copy
 
 # patch vendor/talesoft/tale-jade
 
+
+npm install -g sass uglify-js
+
 mkdir webroot/js
 mkdir webroot/css
+
+nvm install 12.16.2
+# fixes https://github.com/nodejs/docker-node/issues/1126#issuecomment-581126358
+
+cd webroot/assets/components_premium/con-material-adui/src
+npm install
 
 H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php asset_compress build
 
@@ -42,6 +51,9 @@ npm install
 /usr/local/php/7.3.10/bin/php ./bin/cake.php migrations seed
 /usr/local/php/7.3.10/bin/php ./bin/cake.php migrations migrate
 ```
+
+"/root/.nvm/versions/node/v11.9.0/bin/node /root/.nvm/versions/node/v11.9.0/bin/uglifyjs - -m"
+/root/.nvm/versions/node/v11.9.0/bin/node /root/.nvm/versions/node/v11.9.0/bin/uglifyjs webroot/javascripts/application.js
 
 
 
