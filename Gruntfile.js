@@ -1,14 +1,19 @@
 module.exports = function (grunt) {
 
+    const sass = require('node-sass');
+
     var assets = 'webroot/assets/components_premium/con-material-adui/src/app/assets/';
 
     grunt.initConfig({
         sass: {
             dist: {
                 files: {
-                   // 'dist-grunt/css/style.css': 'assets/scss/style.scss'
+                    'webroot/css/application.css': 'webroot/assets/stylesheets/application.scss',
+                    'webroot/css/full_screen.css': 'webroot/assets/stylesheets/full_screen.scss',
+                    'webroot/css/public.css': 'webroot/assets/stylesheets/public.scss'
                 }
-            }
+            },
+            options: { implementation: sass, sourceMap: true }
         },
         concat: {
             css: {
@@ -51,11 +56,10 @@ module.exports = function (grunt) {
                         assets + '_con/js/_con.js',
                         'webroot/assets/javascripts/base.js',
 
+                        'webroot/assets/javascripts/_CAKE.js',
 
                         'webroot/assets/javascripts/sections/users/add.js',
-                        'webroot/assets/javascripts/sections/users/login.js',
-
-                        'webroot/assets/javascripts/_CAKE.js',
+                        'webroot/assets/javascripts/sections/users/login.js'
                     ],
 
                     'webroot/js/public.js': [
@@ -72,10 +76,10 @@ module.exports = function (grunt) {
                         assets + '_con/js/_con.js',
                         'webroot/assets/javascripts/base.js',
 
-
-                        'webroot/assets/javascripts/sections/pages/index.js',
-
                         'webroot/assets/javascripts/_CAKE.js',
+
+                        'webroot/assets/javascripts/sections/pages/index.js'
+
                     ],
                 },
             },
@@ -113,7 +117,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     grunt.registerTask('default', [
-        /*'sass',*/
+        'sass',
         'concat',
         'cssmin'
         //'uglify',
