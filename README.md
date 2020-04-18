@@ -57,3 +57,8 @@ npm install
 
 
 
+## Con
+
+Demo: `/webroot/assets/components_premium/con-material-adui/dist/dashboard.html`
+
+Documentation: `/webroot/assets/components_premium/con-material-adui/documentation/index.html`
