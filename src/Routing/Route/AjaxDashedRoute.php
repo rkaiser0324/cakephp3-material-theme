@@ -17,7 +17,7 @@ class AjaxDashedRoute extends Route
      * @param string $url
      * @return array|false
      */
-	public function parse($url)
+	public function parse($url, $method = '')
     {
         $params = parent::parse($url);
         if (!$params) {

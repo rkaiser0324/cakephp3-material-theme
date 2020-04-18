@@ -38,9 +38,9 @@
   height: 36px;
   padding: 0 2rem;
 
-  &.fc-state-hover {
-    @extend .btn:hover;
-  }
+//   &.fc-state-hover {
+//     @extend .btn:hover;
+//   }
 
   &.fc-state-active {
     box-shadow: inset 0 1px 2px rgba(0,0,0,.26);

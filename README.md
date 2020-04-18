@@ -23,3 +23,25 @@ the setup traffic lights.
 
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
+
+
+```
+H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php composer.phar install
+H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php plugin assets copy
+
+# patch vendor/talesoft/tale-jade
+
+mkdir webroot/js
+mkdir webroot/css
+
+H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php asset_compress build
+
+cd .\webroot\assets\components_premium\con-material-adui\src
+npm install
+
+/usr/local/php/7.3.10/bin/php ./bin/cake.php migrations seed
+/usr/local/php/7.3.10/bin/php ./bin/cake.php migrations migrate
+```
+
+
+

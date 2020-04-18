@@ -1,4 +1,4 @@
-/* 
+/*
  * Main application stylesheet
  *
  * Made by coolops
@@ -12,7 +12,7 @@ $con_theme: 'deep-purple';
 
 // import materializecss & con-material-admin-dashboard-ui
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/mixins";
-@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/color";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/_color.scss";
 
 // variables
 @import "../components_premium/con-material-adui/src/src/scss/parts/_variables";
@@ -29,7 +29,7 @@ $con_theme: 'deep-purple';
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/icons-material-design";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/grid";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/navbar";
-@import "../components/materialize/sass/components/roboto";
+//@import "../components/materialize/sass/components/roboto";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/typography";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/cards";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/toast";
@@ -91,8 +91,8 @@ $con_theme: 'deep-purple';
 @import "base/base";
 @import "sections/layout/default/base/base";
 
-@import "components/**/*";
-@import "sections/layout/default/components/**/*";
+// @import "../components_premium/con-material-adui/src/src/scss";
+// @import "sections/layout/default/components/**/*";
 
 @import "trumps/helpers";
 @import "sections/layout/default/trumps/helpers";

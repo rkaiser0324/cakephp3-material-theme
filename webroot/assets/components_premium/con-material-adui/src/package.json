@@ -7,7 +7,6 @@
   "support": "http://nk.ticksy.com",
   "purchase": "http://themeforest.net/item/con-material-admin-dashboard-template/10621512?ref=_nK",
   "version": "2.3.2",
-
   "devDependencies": {
     "gulp": "^3.8.11",
     "browser-sync": "^1.9.1",

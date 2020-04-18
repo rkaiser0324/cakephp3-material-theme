@@ -1,4 +1,4 @@
-/* 
+/*
  * Stylesheet for full_screen layout
  *
  * Made by coolops
@@ -29,7 +29,7 @@ $con_theme: 'deep-purple';
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/icons-material-design";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/grid";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/navbar";
-@import "../components/materialize/sass/components/roboto";
+//@import "../components/materialize/sass/components/roboto";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/typography";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/cards";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/toast";
@@ -91,8 +91,8 @@ $con_theme: 'deep-purple';
 @import "base/base";
 @import "sections/layout/full_screen/base/base";
 
-@import "components/**/*";
-@import "sections/layout/full_screen/components/**/*";
+// @import "components/**/*";
+// @import "sections/layout/full_screen/components/**/*";
 
 @import "trumps/helpers";
 @import "sections/layout/full_screen/trumps/helpers";

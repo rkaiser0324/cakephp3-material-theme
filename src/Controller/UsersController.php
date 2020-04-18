@@ -161,7 +161,7 @@ class UsersController extends AppController
             }
 
             $user = $this->Users->patchEntity($user, $data);
-            $user->set(['role_id' => $roles['user']]);
+            $user->set(['role_id' => 1]);
             $this->Users->touch($user, 'Controller.Users.afterLogin');
 
             if ($this->Users->save($user)) {

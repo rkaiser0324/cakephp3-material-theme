@@ -6,12 +6,12 @@
     "license": "MIT",
     "require": {
         "php": ">=7.0.0",
-        "cakephp/cakephp": "~3.2",
+        "cakephp/cakephp": "3.8.11",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
-        "clthck/cakephp-jade": "*",
-        "clthck/asset-compress-improved": "~3.0",
+        "clthck/cakephp-jade": "0.1.4",
+        "markstory/asset_compress": "3.5.1",
         "admad/cakephp-hybridauth": "~3.0",
         "fzaninotto/faker": "*",
         "xety/cake3-cookieauth": "1.*",
@@ -56,5 +56,8 @@
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "prefer-source": true
+    }
 }
