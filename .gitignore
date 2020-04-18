@@ -9,4 +9,5 @@
 /tmp/*
 /vendor/*
 /webroot/.sass-cache/*
-/webroot/assets/components/*
+/webroot/css/*
+/webroot/js/*

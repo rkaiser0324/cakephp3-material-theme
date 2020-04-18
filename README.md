@@ -8,57 +8,43 @@ The framework source code can be found here: [cakephp/cakephp](https://github.co
 
 ## Installation
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist coolops/web-app [app_name]`.
-
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist coolops/web-app [app_name]
-```
-
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
+1. Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
+1. Patch vendor/talesoft/tale-jade to fix warning.
 
-
-```
+```dos
 H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php composer.phar install
 H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php plugin assets copy
+```
 
-# patch vendor/talesoft/tale-jade
-
-
-npm install -g sass uglify-js
-
+```dos
 mkdir webroot/js
 mkdir webroot/css
 
-nvm install 12.16.2
-# fixes https://github.com/nodejs/docker-node/issues/1126#issuecomment-581126358
-
-cd webroot/assets/components_premium/con-material-adui/src
-npm install
-
 H:\Programs\php-7.3.0-nts-Win32-VC15-x64\php bin\cake.php asset_compress build
-
-cd .\webroot\assets\components_premium\con-material-adui\src
 npm install
+grunt watch
+```
 
+Then set up the DB on vagrant:
+```bash
 /usr/local/php/7.3.10/bin/php ./bin/cake.php migrations seed
 /usr/local/php/7.3.10/bin/php ./bin/cake.php migrations migrate
 ```
 
-"/root/.nvm/versions/node/v11.9.0/bin/node /root/.nvm/versions/node/v11.9.0/bin/uglifyjs - -m"
-/root/.nvm/versions/node/v11.9.0/bin/node /root/.nvm/versions/node/v11.9.0/bin/uglifyjs webroot/javascripts/application.js
+## Admin Theme
+
+* Demo: http://coolops/assets/components_premium/con-material-adui/dist/dashboard.html
+* Documentation: http://coolops/assets/components_premium/con-material-adui/documentation/index.html
 
 
+## Bake Templates
 
-## Con
+This theme uses [tale-jade](https://github.com/Talesoft/tale-jade) which is a PHP port of the [Jade template engine](http://jade-lang.com/) - seems unnecessary so we can skip this.
 
-Demo: `/webroot/assets/components_premium/con-material-adui/dist/dashboard.html`
+The user-add and login pages look built manually - doesn't look like there were bake templates, so look into merging in this:
+* https://github.com/jeffersonbehling/materialize-theme-cakephp - uses Twig, has controller, form element, and add/edit/index/login views. Not very active but recently updated.
 
-Documentation: `/webroot/assets/components_premium/con-material-adui/documentation/index.html`
+Other links:
+* https://github.com/nos86/cakephp3-material-design - only has a controller.  Last updated 2018.
+* https://github.com/WrDX/cakephp-materialize - helpers for CakePHP 2.x

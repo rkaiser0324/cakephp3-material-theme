@@ -7,15 +7,20 @@ module.exports = function (grunt) {
     grunt.initConfig({
         sass: {
             dist: {
-                files: {
-                    'webroot/css/application.css': 'webroot/assets/stylesheets/application.scss',
-                    'webroot/css/full_screen.css': 'webroot/assets/stylesheets/full_screen.scss',
-                    'webroot/css/public.css': 'webroot/assets/stylesheets/public.scss'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'webroot/assets/stylesheets',
+                    src: ['*.scss'],
+                    dest: 'webroot/css',
+                    ext: '.css'
+                  }]
             },
             options: { implementation: sass, sourceMap: true }
         },
         concat: {
+            options: {
+                separator: "\n"
+            },
             css: {
                 files: {
                     // 'dist-grunt/css/styles.css': [
@@ -47,40 +52,14 @@ module.exports = function (grunt) {
                         'webroot/assets/javascripts/_CAKE.js'
                     ],
                     'webroot/js/full_screen.js': [
-                        assets + 'jquery/jquery.min.js',
-
-                        // underscore
-                        // blockUI
-
-                        assets + 'jqueryRAF/jquery.requestAnimationFrame.min.js',
-                        assets + 'nanoScroller/jquery.nanoscroller.min.js',
-                        assets + 'materialize/js/materialize.min.js',
-                        assets + 'parsley/parsley.min.js',
-                        //
-                        assets + '_con/js/_con.js',
-                        'webroot/assets/javascripts/base.js',
-
-                        'webroot/assets/javascripts/_CAKE.js',
+                        'webroot/js/application.js',
 
                         'webroot/assets/javascripts/sections/users/add.js',
                         'webroot/assets/javascripts/sections/users/login.js'
                     ],
 
                     'webroot/js/public.js': [
-                        assets + 'jquery/jquery.min.js',
-
-                        // underscore
-                        // blockUI
-
-                        assets + 'jqueryRAF/jquery.requestAnimationFrame.min.js',
-                        assets + 'nanoScroller/jquery.nanoscroller.min.js',
-                        assets + 'materialize/js/materialize.min.js',
-                        assets + 'parsley/parsley.min.js',
-                        //
-                        assets + '_con/js/_con.js',
-                        'webroot/assets/javascripts/base.js',
-
-                        'webroot/assets/javascripts/_CAKE.js',
+                        'webroot/js/application.js',
 
                         'webroot/assets/javascripts/sections/pages/index.js'
 
@@ -90,16 +69,30 @@ module.exports = function (grunt) {
         },
         cssmin: {
             dist: {
-                files: {
-                //    'dist-grunt/css/styles.min.css': ['dist-grunt/css/styles.css']
-                }
+                // files: {
+                //     'webroot/css/application.min.css': ['webroot/css/application.css']
+                // }
+                files: [{
+                    expand: true,
+                    cwd: 'webroot/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'webroot/css',
+                    ext: '.min.css'
+                  }]
             }
         },
         uglify: {
             dist: {
-                files: {
-                    'dist-grunt/js/scripts.min.js': ['dist-grunt/js/scripts.js']
-                }
+                // files: {
+                //     'dist-grunt/js/scripts.min.js': ['dist-grunt/js/scripts.js']
+                // }
+                files: [{
+                    expand: true,
+                    cwd: 'webroot/js',
+                    src: ['*.js', '!*.min.css'],
+                    dest: 'webroot/js',
+                    ext: '.min.js'
+                  }]
             }
         },
         imagemin: {
@@ -123,8 +116,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'sass',
         'concat',
-        'cssmin'
-        //'uglify',
+        'cssmin',
+        //'uglify', // no change in practice since they're already minified
         //'imagemin'
     ]);
 
